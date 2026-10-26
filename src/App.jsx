@@ -23,11 +23,11 @@ let deleteUser = (id)=>{
 }
 
   return (
-    <div className='p-3 flex flex-col gap-4'>
+    <div className='mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-4 p-3 sm:p-5'>
       <Navbar setToggle={setToggle}/>
 
      {
-      toogle?(<div className='flex flex-wrap gap-4'>
+      toogle?(<div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
        {user.map((elem)=>{
         return <UserCard 
         
@@ -37,7 +37,7 @@ let deleteUser = (id)=>{
         user={elem}
        setToggle={setToggle} />
        })}
-     </div>): <div className=' h-[70%]  justify-center items-center'>
+     </div>): <div className='flex flex-1 items-start justify-center py-4 sm:items-center'>
      <Form
      updatedData={updatedData}
       setUpdatedData={SetUpdatedData}

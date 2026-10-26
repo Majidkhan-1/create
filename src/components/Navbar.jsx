@@ -1,20 +1,18 @@
-import React from 'react'
-
 const Navbar = ({setToggle}) => {
   return (
-    <div className='p-3 flex items-center bg-green-600 rounded justify-between'>
+    <header className='flex flex-col items-center gap-3 rounded bg-green-600 p-3 sm:flex-row sm:justify-between'>
       <div>
-        <img width={43} className='rounded-full' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXze31Ftkykf-vSbA9d2ajVmcIq96jNK2RW3OQRk8L-Q&s=10" alt="" />
+        <img width={43} className='rounded-full' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXze31Ftkykf-vSbA9d2ajVmcIq96jNK2RW3OQRk8L-Q&s=10" alt="User manager logo" />
       </div>
-      <div className='flex gap-6 font-semibold'>
+      <nav className='flex flex-wrap justify-center gap-4 font-semibold sm:gap-6'>
         <p>Home</p>
         <p>About</p>
         <p>Contact</p>
-      </div>
+      </nav>
       <button
       onClick={()=>setToggle((prev)=>!prev)}
-       className='p-2 bg-blue-800 rounded text-white-900 cursor-pointer'>Create user</button>
-    </div>
+       className='w-full cursor-pointer rounded bg-blue-800 p-2 text-white sm:w-auto'>Create user</button>
+    </header>
   )
 }
 

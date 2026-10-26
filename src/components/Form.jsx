@@ -38,17 +38,17 @@ console.log(updatedData)
 
 
   return (
-    <div className='flex flex-col gap-3 items-center'>
-      <h1>Create user</h1>
+    <div className='flex w-full flex-col items-center gap-3'>
+      <h1 className='text-xl font-semibold'>{updatedData ? 'Update user' : 'Create user'}</h1>
       <form 
       onSubmit={handleSubmit(formHandle)}
       
-      className='flex flex-col  w-90 p-4 gap-2 border-2 rounded border-white'>
+      className='flex w-full max-w-md flex-col gap-2 rounded border-2 border-white p-4'>
 
         <input
         {...register('name',{required:"Name is required"})}
         
-         className='p-2 rounded border border-gray-800 outline-0' type="text" placeholder='Name' />
+         className='w-full rounded border border-gray-800 p-2 outline-0' type="text" placeholder='Name' />
         {errors.name && <p className='text-red-600'>{errors.name.message}</p>}
 
         <input
@@ -58,7 +58,7 @@ console.log(updatedData)
             message:"Please enter a valid email"
           }
         })}
-         className='p-2 rounded border border-gray-800' type="email" placeholder='Email' />
+         className='w-full rounded border border-gray-800 p-2' type="email" placeholder='Email' />
         {errors.email && <p className='text-red-600'>{errors.email.message}</p> }
 
         <input
@@ -74,18 +74,20 @@ console.log(updatedData)
           }
         })}
        
-         className='p-2 rounded border border-gray-800' type="number" placeholder='Mobile' />
+         className='w-full rounded border border-gray-800 p-2' type="number" placeholder='Mobile' />
         {errors.mobile && <p className='text-red-600'>{errors.mobile.message}</p>}
 
         <input
         {...register('image',{required:"Image is required"})}        
-         className='p-2 rounded border border-gray-800' type="url" placeholder='Image' />
+         className='w-full rounded border border-gray-800 p-2' type="url" placeholder='Image' />
          {errors.image && <p className='text-red-600'>{errors.image.message}</p>}
          
 
         <button 
        
-        className='p-2 bg-blue-500 rounded cursor-pointer'>Add user</button>
+        className='mt-2 w-full cursor-pointer rounded bg-blue-500 p-2 text-white'>
+          {updatedData ? 'Save changes' : 'Add user'}
+        </button>
         
       </form>
     </div>
