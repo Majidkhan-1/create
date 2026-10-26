@@ -1,6 +1,6 @@
 const UserCard = ({user,setToggle,SetUpdatedData,deleteUser}) => {
 
-
+console.log(user)
 
   
 

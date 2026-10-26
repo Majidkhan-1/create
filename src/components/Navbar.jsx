@@ -2,7 +2,7 @@ import React from 'react'
 
 const Navbar = ({setToggle}) => {
   return (
-    <div className='p-3 flex items-center bg-green-500 rounded justify-between'>
+    <div className='p-3 flex items-center bg-green-600 rounded justify-between'>
       <div>
         <img width={43} className='rounded-full' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXze31Ftkykf-vSbA9d2ajVmcIq96jNK2RW3OQRk8L-Q&s=10" alt="" />
       </div>

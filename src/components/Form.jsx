@@ -1,5 +1,5 @@
-import {useForm } from 'react-hook-form'
-import { nanoid } from "nanoid";
+import { useForm } from 'react-hook-form'
+import { nanoid } from 'nanoid'
 
 
 
@@ -18,16 +18,16 @@ console.log(updatedData)
     let formHandle = (data) => {
 
       if(updatedData){
-
-       setUser((prev)=>{
-        return prev.map((val) => {
-          return val.id === updatedData.id ? { ...val, ...data } : val;
-        })
-       })
+        const updatedUsers = user.map((val) =>
+          val.id === updatedData.id ? { ...data, id: updatedData.id } : val
+        )
+        setUser(updatedUsers)
+        localStorage.setItem('users', JSON.stringify(updatedUsers))
         
       }else{
           let arr = [...user,{...data,id:nanoid()}]
           setUser(arr)
+          localStorage.setItem("users", JSON.stringify(arr));
       }
      
       

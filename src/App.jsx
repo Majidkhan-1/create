@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import { nanoid } from 'nanoid'
+import { useState } from 'react'
 import Navbar from './components/Navbar'
 import UserCard from './components/UserCard'
 import Form from './components/Form'
@@ -8,23 +7,19 @@ const App = () => {
   
   let [toogle,setToggle] = useState(false);
 
-  let[user,setUser] = useState(()=>{
-    const storedUsers = JSON.parse(localStorage.getItem('users')) || []
-    return storedUsers.map((storedUser) => ({
-      ...storedUser,
-      id: storedUser.id || nanoid(),
-    }))
-  });
+  let[user,setUser] = useState(JSON.parse(localStorage.getItem('users')) || [])
+   
+    
+ 
 
 let[updatedData,SetUpdatedData] = useState(null);
 
-useEffect(() => {
-  localStorage.setItem('users', JSON.stringify(user))
-}, [user])
+
 
 let deleteUser = (id)=>{
   let filered = user.filter((val)=> val.id !== id)
   setUser(filered)
+  localStorage.setItem('users',JSON.stringify(filered))
 }
 
   return (
